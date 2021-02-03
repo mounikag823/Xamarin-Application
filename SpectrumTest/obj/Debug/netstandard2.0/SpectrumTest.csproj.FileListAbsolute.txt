@@ -1,0 +1,16 @@
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/bin/Debug/netstandard2.0/SpectrumTest.deps.json
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/bin/Debug/netstandard2.0/SpectrumTest.dll
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/bin/Debug/netstandard2.0/ref/SpectrumTest.dll
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/bin/Debug/netstandard2.0/SpectrumTest.pdb
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/AppShell.xaml.g.cs
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/LoginShell.xaml.g.cs
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/Views/LoginPage.xaml.g.cs
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/Views/RegistartionPage.xaml.g.cs
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/SpectrumTest.AssemblyInfoInputs.cache
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/SpectrumTest.AssemblyInfo.cs
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/SpectrumTest.csproj.CoreCompileInputs.cache
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/SpectrumTest.dll
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/ref/SpectrumTest.dll
+/Users/apple/Documents/Arun/SpectrumTest/SpectrumTest/obj/Debug/netstandard2.0/SpectrumTest.pdb
