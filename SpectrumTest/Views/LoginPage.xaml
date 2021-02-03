@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SpectrumTest.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Shell.FlyoutBehavior="Disabled"
+             xmlns:converters="clr-namespace:SpectrumTest.Converters"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White"
+                     Padding="0,70,0,0">
+            <Label TextColor="Black" FontSize="Header" HorizontalOptions="CenterAndExpand"
+                   Text="Welcome To Login"/>
+            <StackLayout BackgroundColor="White"
+                   Margin="0,30,0,0"
+                   HeightRequest="300"
+                   HorizontalOptions="FillAndExpand"></StackLayout>
+            <StackLayout BackgroundColor="White"
+                         VerticalOptions="FillAndExpand">
+                <Entry PlaceholderColor="LightGray" FontSize="Medium" TextColor="Black"
+                       Placeholder="Email ID"
+                       Keyboard="Email"
+                       Text="{Binding Email.Value, Mode=TwoWay}"
+                       Margin="24,30,24,0" />
+                <Label Text="{Binding Email.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+					   TextColor="Red" FontSize="10"
+                       Margin="26,0,24,10"/>
+
+                <Entry PlaceholderColor="LightGray" FontSize="Medium" TextColor="Black"
+                       Placeholder="Password"
+                       Text="{Binding Password.Value, Mode=TwoWay}"
+                       Margin="24,0,24,0"
+                       IsPassword="True"/>
+                <Label Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+					   TextColor="Red" FontSize="10"
+                       Margin="26,0,24,10"/>
+
+                <StackLayout IsVisible="{Binding IsBusy}">
+                <Image Source="loading.gif"
+                       IsAnimationPlaying="True"
+                       WidthRequest="80"
+                       HeightRequest="80"/>
+                <Label Text="Loading..."
+                       HorizontalTextAlignment="Center"
+                       TextColor="SkyBlue"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center"
+                             VerticalOptions="EndAndExpand"
+                             Margin="0,0,0,80">
+                    <Button BackgroundColor="SkyBlue" Padding="10,0,10,0" TextColor="White"
+                            Text="Login" CornerRadius="20" HorizontalOptions="FillAndExpand"
+                            Command="{Binding LoginCommand}"/>
+                    <Button BackgroundColor="White" Padding="10,0,10,0" TextColor="Blue"
+                            Text="Don't have an account? Sign up" HorizontalOptions="FillAndExpand"
+                            Command="{Binding RegisterCommand}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

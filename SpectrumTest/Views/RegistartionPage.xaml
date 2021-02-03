@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpectrumTest.Views.RegistartionPage"
+             xmlns:converter="clr-namespace:SpectrumTest.Converters"
+             xmlns:behaviour="clr-namespace:SpectrumTest.Behaviours">
+   
+         <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converter:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="30"
+                         VerticalOptions="CenterAndExpand">
+
+                <Label Text="Create account"
+                      TextColor="Black" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+
+                <!--First Name-->
+                <Entry Text="{Binding FirstName.Value}" 
+                       Placeholder="First Name">
+                     <Entry.Behaviors>
+                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding FirstName.IsValid}"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                 <Label Text="{Binding FirstName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                        IsVisible="{Binding FirstName.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                        TextColor="Red" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                 <!--/First Name-->
+
+                <!--Last Name-->
+                  <Entry Text="{Binding LastName.Value}"
+                         Placeholder="Last Name">
+                     <Entry.Behaviors>
+                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding LastName.IsValid}"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                 <Label Text="{Binding LastName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                        IsVisible="{Binding LastName.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                        TextColor="Red" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                <!--/Last Name-->
+
+                 <!-- UserName-->
+                  <Entry Text="{Binding Email.Item1.Value}"
+                         Placeholder="Email">
+                     <Entry.Behaviors>
+                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding Email.Item1.IsValid}"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                 <Label Text="{Binding Email.Item1.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                        IsVisible="{Binding Email.Item1.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                        TextColor="Red" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+
+                 <Entry Text="{Binding Email.Item2.Value}"
+                         Placeholder="Confirm Email">
+                     <Entry.Behaviors>
+                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding Email.Item2.IsValid}"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                 <Label Text="{Binding Email.Item2.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                        IsVisible="{Binding Email.Item2.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                        TextColor="Red" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                <!--/Email-->
+
+                <!--Password-->
+                  <Entry Text="{Binding Password.Item1.Value}"
+                         Placeholder="Password">
+                     <Entry.Behaviors>
+                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding Password.Item1.IsValid}"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                 <Label Text="{Binding Password.Item1.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                        IsVisible="{Binding Password.Item1.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                        TextColor="Red" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+
+                 <Entry Text="{Binding Password.Item2.Value}"
+                         Placeholder="Confirm Password">
+                     <Entry.Behaviors>
+                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding Password.Item2.IsValid}"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                 <Label Text="{Binding Password.Item2.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                        IsVisible="{Binding Password.Item2.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                        TextColor="Red" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                <!--/Password-->
+
+                <!--Birthday-->
+                <DatePicker Date="{Binding BirthDay.Value}"/>
+                <Label Text="{Binding BirthDay.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                        IsVisible="{Binding BirthDay.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                        TextColor="Red" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                 <!--Birthday-->
+
+                
+                <!--Phone Number-->
+                <Entry Text="{Binding PhoneNumber.Value}"
+                       MaxLength="10"
+                       Placeholder="Phone Number">
+                     <Entry.Behaviors>
+                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding PhoneNumber.IsValid}"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                 <Label Text="{Binding PhoneNumber.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                        IsVisible="{Binding PhoneNumber.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                         TextColor="Red" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                 <!--/Phone Number-->
+
+
+               
+
+                <Button Text="Create Account" CornerRadius="20" HorizontalOptions="FillAndExpand" Padding="10,0,10,0" TextColor="White" BackgroundColor="SkyBlue"
+                        Command="{Binding SignUpCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
